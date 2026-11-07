@@ -27,4 +27,4 @@ The dataset contains 7,043 customers. Of these, 1,869 churned, giving an overall
 These are observed associations in this dataset; they don't prove what caused customers to leave. 
 
 ## Project status
-In Progress. 
+Complete. 
