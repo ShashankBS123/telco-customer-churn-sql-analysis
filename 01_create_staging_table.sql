@@ -1,0 +1,23 @@
+CREATE TABLE telco_churn_raw(
+    customer_id text,
+    gender text,
+    senior_citizen text,
+    partner text,
+    dependents text,
+    tenure text,
+    phone_service text,
+    multiple_lines text,
+    internet_service text,
+    online_security text,
+    online_backup text,
+    device_protection text,
+    tech_support text,
+    streaming_tv text,
+    streaming_movies text,
+    contract text,
+    paperless_billing text,
+    payment_method text,
+    monthly_charges text,
+    total_charges text,
+    churn text
+); 

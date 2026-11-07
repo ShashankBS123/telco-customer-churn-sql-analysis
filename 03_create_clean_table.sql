@@ -1,0 +1,73 @@
+CREATE TABLE telco_churn_clean(
+    customer_id text,
+    gender text,
+    senior_citizen int,
+    partner text,
+    dependents text,
+    tenure int,
+    phone_service text,
+    multiple_lines text,
+    internet_service text,
+    online_security text,
+    online_backup text,
+    device_protection text,
+    tech_support text,
+    streaming_tv text,
+    streaming_movies text,
+    contract text,
+    paperless_billing text,
+    payment_method text,
+    monthly_charges numeric,
+    total_charges numeric,
+    churn text
+);
+
+INSERT INTO telco_churn_clean
+(
+	customer_id,
+    gender,
+    senior_citizen,
+    partner,
+    dependents,
+    tenure,
+    phone_service,
+    multiple_lines,
+    internet_service,
+    online_security,
+    online_backup,
+    device_protection,
+    tech_support,
+    streaming_tv,
+    streaming_movies,
+    contract,
+    paperless_billing,
+    payment_method,
+    monthly_charges,
+    total_charges,
+    churn
+)
+SELECT 
+	customer_id,
+    gender,
+    senior_citizen :: int,
+    partner,
+    dependents,
+    tenure :: int,
+    phone_service,
+    multiple_lines,
+    internet_service,
+    online_security,
+    online_backup,
+    device_protection,
+    tech_support,
+    streaming_tv,
+    streaming_movies,
+    contract,
+    paperless_billing,
+    payment_method,
+    monthly_charges :: numeric,
+    NULLIF(TRIM(total_charges),'')::numeric,
+    churn
+FROM telco_churn_raw; 
+
+
